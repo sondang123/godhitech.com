@@ -6,8 +6,10 @@ import { AppResource } from "~/const/AppResource";
 import { DesktopContainer, MobileContainer } from "~/const/StyleGlobal";
 import { cn } from "~/lib/utils";
 
-export const Header = () => {
-  const pathname = "/";
+interface IProps {
+  pathname?: string;
+}
+export const Header: React.FC<IProps> = ({ pathname }) => {
   // const navigate = useNavigate();
   const [isSticky, setIsSticky] = useState(false);
   const [open, setOpen] = React.useState(false);
@@ -27,6 +29,7 @@ export const Header = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   return (
     <>
       <DesktopContainer
@@ -48,8 +51,10 @@ export const Header = () => {
               <div className="flex items-center">
                 {AppData.dataMenu?.map((item, index) => {
                   if (
-                    pathname === item?.link
-                    // || (pathname === "/detail" && item?.link === "/careers")
+                    pathname === item?.link ||
+                    pathname === `${item?.link}/` ||
+                    (pathname?.includes("/detail") &&
+                      item?.link?.includes("/careers"))
                   ) {
                     return (
                       <a
@@ -112,7 +117,6 @@ export const Header = () => {
                     <i className="ri-menu-line ri-2x"></i>
                   </SheetTrigger>
                   <SheetContent side="left" className="w-[70%]">
-                    {/* <SheetHeader></SheetHeader> */}
                     <div>
                       <a
                         href="/"
@@ -130,8 +134,10 @@ export const Header = () => {
                     <div className="mt-3">
                       {AppData.dataMenu?.map((item, index) => {
                         if (
-                          pathname === item?.link
-                          // || (pathname === "/detail" && item?.link === "/careers")
+                          pathname === item?.link ||
+                          pathname === `${item?.link}/` ||
+                          (pathname?.includes("/detail") &&
+                            item?.link?.includes("/careers"))
                         ) {
                           return (
                             <a

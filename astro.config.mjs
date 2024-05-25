@@ -10,4 +10,5 @@ export default defineConfig({
       applyBaseStyles: false,
     }),
   ],
+  renderers: ["@astrojs/renderer-react"],
 });

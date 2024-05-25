@@ -1,13 +1,13 @@
 ---
 import { Footer } from '~/components/Footer';
-import { Header } from '~/components/Header';
+import  {Header} from '~/components/Header';
 import '~/styles/tailwind.css'
 import 'remixicon/fonts/remixicon.css'
 interface Props {
 	title?: string;
 }
-
 const { title } = Astro.props;
+const {pathname}= Astro.url
 ---
 
 <!doctype html>
@@ -25,7 +25,7 @@ const { title } = Astro.props;
 		<link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 	</head>
 	<body>
-		<Header client:only="react"/>
+		<Header pathname={pathname} client:load/>
 		<slot />
 		<Footer />
 	</body>
