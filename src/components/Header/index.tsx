@@ -29,6 +29,10 @@ export const Header: React.FC<IProps> = ({ pathname }) => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  console.log("====================================");
+  console.log("pathname", pathname);
+  console.log("====================================");
   return (
     <>
       <DesktopContainer
