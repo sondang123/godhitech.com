@@ -54,7 +54,7 @@ export const Header: React.FC<IProps> = ({ pathname }) => {
               <div className="flex items-center">
                 {AppData.dataMenu?.map((item, index) => {
                   if (
-                    pathname === item?.link ||
+                    pathname?.includes(item?.link) ||
                     (pathname?.includes("/detail") &&
                       item?.link?.includes("/careers"))
                   ) {
@@ -136,7 +136,7 @@ export const Header: React.FC<IProps> = ({ pathname }) => {
                     <div className="mt-3">
                       {AppData.dataMenu?.map((item, index) => {
                         if (
-                          pathname === item?.link ||
+                          pathname?.includes(item?.link) ||
                           (pathname?.includes("/detail") &&
                             item?.link?.includes("/careers"))
                         ) {
