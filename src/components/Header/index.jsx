@@ -1,4 +1,3 @@
-import { Link } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { ButtonFullBg } from "~/components/AppButton/ButtonFullBg";
 import { Sheet, SheetContent, SheetTrigger } from "~/components/ui/sheet";
