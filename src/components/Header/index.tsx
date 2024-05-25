@@ -30,9 +30,6 @@ export const Header: React.FC<IProps> = ({ pathname }) => {
     };
   }, []);
 
-  console.log("====================================");
-  console.log("pathname", pathname);
-  console.log("====================================");
   return (
     <>
       <DesktopContainer
