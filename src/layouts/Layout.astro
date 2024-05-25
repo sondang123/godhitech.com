@@ -1,6 +1,10 @@
 ---
+import { Footer } from '~/components/Footer';
+import { Header } from '~/components/Header';
+import '~/styles/tailwind.css'
+import 'remixicon/fonts/remixicon.css'
 interface Props {
-	title: string;
+	title?: string;
 }
 
 const { title } = Astro.props;
@@ -15,10 +19,17 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 	</head>
 	<body>
+		<Header client:only="react"/>
 		<slot />
+		<Footer />
 	</body>
+	
 </html>
 <style is:global>
 	:root {
