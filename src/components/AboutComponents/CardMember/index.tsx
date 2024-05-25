@@ -1,7 +1,7 @@
 // import { AppResource } from '~/const/AppResource'
 import React from "react";
 interface typeItem {
-  avatar?: string;
+  avatar?: ImageMetadata;
   name?: string;
   position?: string;
   facebook?: string;
@@ -20,7 +20,7 @@ export const CardMember: React.FC<props> = ({ itemCell }) => {
         {itemCell?.avatar ? (
           <img
             className="w-[70%] rounded-full ring-2 ring-white mx-auto pt-5"
-            src={itemCell?.avatar}
+            src={itemCell?.avatar.src}
             alt="avatar"
           />
         ) : null}
