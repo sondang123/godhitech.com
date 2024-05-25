@@ -51,7 +51,8 @@ export const Header: React.FC<IProps> = ({ pathname }) => {
                 {AppData.dataMenu?.map((item, index) => {
                   if (
                     pathname === item?.link ||
-                    (pathname === "/detail" && item?.link === "/careers")
+                    (pathname?.includes("/detail") &&
+                      item?.link?.includes("/careers"))
                   ) {
                     return (
                       <a
@@ -132,7 +133,8 @@ export const Header: React.FC<IProps> = ({ pathname }) => {
                       {AppData.dataMenu?.map((item, index) => {
                         if (
                           pathname === item?.link ||
-                          (pathname === "/detail" && item?.link === "/careers")
+                          (pathname?.includes("/detail") &&
+                            item?.link?.includes("/careers"))
                         ) {
                           return (
                             <a
