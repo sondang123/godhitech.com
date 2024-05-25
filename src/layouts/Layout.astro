@@ -25,7 +25,7 @@ const {pathname}= Astro.url
 		<link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 	</head>
 	<body>
-		<Header pathname={pathname} client:only=”react”/>
+		<Header pathname={pathname} client:load/>
 		<slot />
 		<Footer />
 	</body>
