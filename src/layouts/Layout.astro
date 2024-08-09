@@ -34,11 +34,26 @@ const { pathname } = Astro.url;
       async
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3563326362881125"
       crossorigin="anonymous"></script>
+
+    <script
+      async
+      custom-element="amp-ad"
+      src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
   </head>
   <body>
     <Header pathname={pathname} client:load />
     <slot />
-    <Footer />
+    <Footer /><amp-ad
+      width="100vw"
+      height="320"
+      type="adsense"
+      data-ad-client="ca-pub-3563326362881125"
+      data-ad-slot="4792714257"
+      data-auto-format="rspv"
+      data-full-width=""
+    >
+      <div></div>
+    </amp-ad>
   </body>
 </html>
 <style is:global>
